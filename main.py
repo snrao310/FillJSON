@@ -3,20 +3,22 @@ import re
 from bs4 import BeautifulSoup
 import urllib.request
 
-with open('webmd-question.json', 'r') as f:
+with open('questions.json', 'r') as f:
     json_data = f.read()
-    json_data = json_data.replace("\\'", "'")
+    json_data = json_data.replace("\\\\'", "'")
     json_data=json_data.replace('\t', ' ')
+
+# print (json_data[3386380:3386388])
 
 data = json.loads(json_data)
 
 
 
-# print (data[0])
+print (data[0])
 
-# print (data[0]['questionURL'])
-# with open('out.json', 'w') as outfile:
-#     outfile.write('[')
+print (data[0]['questionURL'])
+with open('out.json', 'w') as outfile:
+    outfile.write('[')
 
 first=0
 count=0
